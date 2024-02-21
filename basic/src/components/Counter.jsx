@@ -1,12 +1,13 @@
-import React from 'react';
-import './App.css';
+import React, { useState } from 'react';
 
 export default function Counter(){
+    const [count, setCount] = useState(0);
     return (
         <div className='counter'>
-            <span className='number'>0</span>
-            <button className='button'>Add +</button>
-            <Counter/>
+            <span className='number'>`{count}</span>
+            <button className='button' onClick={()=>{
+                setCount(count + 1);
+            }}>Add +</button>
         </div>  
     );
 }
